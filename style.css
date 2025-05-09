@@ -1,6 +1,8 @@
 :root {
   --primary-accent: #bdbfbc;
   --cyber-red: #e41b33;
+  --cyber-blue: #78d6cc;
+  --cyber-yellow: #f9f01d;
 }
 
 * {
@@ -28,8 +30,8 @@ nav {
 aside {
   background-image: linear-gradient(
       to right,
-      hsla(353, 79%, 50%, 0.1) 10%,
-      rgba(0, 0, 0, 0.2)
+      hsla(353, 79%, 50%, 0.15) 10%,
+      rgba(0, 0, 0, 0.3)
     ),
     url(./assets/images/stripes.svg);
   box-shadow: 0px 0px 3px 1px solid var(--cyber-red);
@@ -46,19 +48,19 @@ aside::after,
 aside::before {
   content: "";
   position: absolute;
-  width: 0.5px;
-  background-color: rgba(228, 27, 50, 0.4);
+  width: 1px;
+  background-color: rgba(228, 27, 50, 1);
   height: 100%;
 }
 
 aside::after {
   right: 0;
-  box-shadow: -2.5px 0px 6px 1px var(--cyber-red);
+  box-shadow: -1px 0px 4px 1px var(--cyber-red);
 }
 
 aside::before {
   left: 0;
-  box-shadow: 2.5px 0px 6px 1px var(--cyber-red);
+  box-shadow: 1px 0px 4px 1px var(--cyber-red);
 }
 
 .profile-wrapper {
@@ -96,7 +98,7 @@ input[type="search"]:not(placeholder-shown) {
   border-radius: 0.25rem;
   border: 1.5px solid var(--cyber-red);
   background: rgba(0, 0, 0, 0.5);
-  color: #78d6cc;
+  color: var(--cyber-blue);
 }
 
 input:focus {
@@ -115,15 +117,14 @@ label {
 }
 
 .opt,
-.helper {
-  background-color: #555656;
-  color: white;
-  border: none;
+.helper,
+.nav-button {
+  color: var(--cyber-blue);
+  border: 1.5px solid var(--cyber-blue);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .nav-button {
-  border: 1.5px solid #78d6cc;
-  background-color: rgba(0, 0, 0, 0.5);
   clip-path: polygon(
     0% 0%,
     100% 0%,
@@ -133,7 +134,6 @@ label {
   );
   text-align: left;
   padding: 0.75rem 1rem;
-  color: #78d6cc;
 }
 
 .help-button-wrapper {
@@ -180,7 +180,7 @@ nav {
 nav::before {
   content: "";
   position: absolute;
-  inset: 50% 6% auto 6%;
+  inset: 50% 6% auto 5%;
   padding-left: 10px;
   height: 1px;
   background: var(--cyber-red);
@@ -191,10 +191,11 @@ nav::before {
 .opt:last-child {
   margin-left: auto;
   background-color: var(--cyber-red);
-  color: #f9f01d;
+  color: var(--cyber-yellow);
   display: block;
   font-size: 16px;
   font-weight: 700;
+  border: none;
 }
 
 .opt {
@@ -210,7 +211,7 @@ main {
   padding: 32px 5%;
   grid-template-columns: repeat(auto-fit, minmax(min(275px, 100%), 1fr));
   gap: 32px;
-  background-color: #000000d5;
+  background-color: rgba(0, 0, 0, 0.9);
 
   /* absolutely need this. W/o it, img/card does not fill up entire cell height causing weird gaps */
   grid-auto-rows: min-content;
@@ -223,16 +224,16 @@ main {
   align-self: end;
   border-top-right-radius: 5%;
   border-top-left-radius: 5%;
-  border: 1px solid #5c5c5c;
+  border: 1.5px solid #00ff9f;
 }
 
 .card-description-outline {
   align-self: end;
-  background-color: #5c5c5c;
+  background-color: #00ff9f;
   /* need height to make polygon divots same no matter size of card */
   height: 20%;
   padding: 1em;
-  color: white;
+  color: #00ff9f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -260,7 +261,7 @@ main {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-color: #2d2d2d;
+  background-color: rgba(0, 0, 0, 0.9);
 
   clip-path: polygon(
     0.437% 2.778%,
