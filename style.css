@@ -11,9 +11,9 @@
 
 .wrapper {
   display: grid;
-  min-height: 100vh;
+  height: 100vh;
   background: #2d2d2d;
-  grid-template-columns: minmax(200px, 15%) 1fr;
+  grid-template-columns: 275px 1fr;
   grid-template-rows: auto 1fr;
 }
 
@@ -126,7 +126,6 @@ h1 {
 .svg-wrapper {
   max-width: 24px;
   width: 100%;
-  aspect-ratio: 1;
 }
 
 .profile-svg-wrap {
@@ -134,15 +133,8 @@ h1 {
 }
 
 img {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
   display: block;
-}
-
-main {
-  grid-column: 2;
-  grid-row: 2;
-  /* background: url(./assets/images/circuit.svg); */
 }
 
 nav {
@@ -180,4 +172,78 @@ nav .opt:last-child {
   display: block;
   font-size: 16px;
   font-weight: 700;
+}
+
+main {
+  /* background: url(./assets/images/circuit.svg); */
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  overflow-y: auto;
+  padding: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(min(275px, 100%), 1fr));
+  gap: 32px;
+
+  /* absolutely need this. W/o it, img/card does not fill up entire cell height causing weird gaps */
+  grid-auto-rows: min-content;
+}
+
+.card-img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1.25;
+  align-self: end;
+  border-top-right-radius: 5%;
+  border-top-left-radius: 5%;
+  border: 2px solid var(--primary-accent);
+}
+
+.card-description-outline {
+  align-self: end;
+  background-color: var(--primary-accent);
+  clip-path: polygon(
+    0% 0%,
+    3.057% 0%,
+    7.642% 22.222%,
+    12.227% 22.222%,
+    16.812% 0%,
+    83.188% 0%,
+    87.773% 22.222%,
+    92.358% 22.222%,
+    96.943% 0%,
+    100% 0%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+.card-description {
+  align-self: inherit;
+  background-color: #2d2d2d;
+  padding: 1em;
+  color: white;
+  text-align: center;
+  clip-path: polygon(
+    0.437% 2.778%,
+    2.838% 2.778%,
+    7.424% 25%,
+    12.445% 25%,
+    17.031% 2.778%,
+    82.969% 2.778%,
+    87.555% 25%,
+    92.576% 25%,
+    97.162% 2.778%,
+    99.563% 2.778%,
+    99.563% 97.222%,
+    0.437% 97.222%
+  );
+}
+
+.stacked {
+  display: grid;
+}
+
+.stacked > * {
+  grid-row: 1/2;
+  grid-column: 1/2;
 }
