@@ -150,10 +150,9 @@ nav {
 nav::before {
   content: "";
   position: absolute;
-  width: 80%;
+  inset: 50% 6% auto 6%;
   padding-left: 10px;
   height: 1px;
-  top: 50%;
   background: var(--cyber-red);
   z-index: -1;
   box-shadow: 0 0 1px 0.25px #e41b32af;
@@ -201,6 +200,8 @@ main {
 .card-description-outline {
   align-self: end;
   background-color: var(--primary-accent);
+  /* need height to make polygon divots same no matter size of card */
+  height: 20%;
   clip-path: polygon(
     0% 0%,
     3.057% 0%,
@@ -220,8 +221,12 @@ main {
 .card-description {
   align-self: inherit;
   background-color: #2d2d2d;
+  height: 100%;
   padding: 1em;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   clip-path: polygon(
     0.437% 2.778%,
