@@ -22,12 +22,25 @@
             <h1 class="profile-name">Spartan117</h1>
           </div>
 
+          <div
+            class="hamburger close"
+            aria-label="Close Menu"
+            aria-expanded="true"
+            role="button"
+            tabindex="0"
+            aria-controls="sidebar"
+          >
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+          </div>
+
           <div class="svg-wrapper">
             <img
-              src="./assets/images/notification-bell.svg"
+              src="./assets/images/noun-notification-7816838.svg"
               alt="notification bell"
-              width="24"
-              height="24"
+              width="30"
+              height="30"
             />
           </div>
         </section>
@@ -55,11 +68,23 @@
         </div>
       </aside>
       <nav class="nav">
+        <div
+          class="hamburger"
+          aria-label="Open Menu"
+          aria-expanded="false"
+          role="button"
+          tabindex="0"
+          aria-controls="sidebar"
+        >
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+          <span class="ham-line"></span>
+        </div>
         <button class="opt">Upload</button>
         <button class="opt">Share</button>
         <button class="opt">Recent</button>
-        <div class="spacer"></div>
-        <button class="opt">Create</button>
+        <span class="spacer"></span>
+        <button class="opt">+ New</button>
       </nav>
       <main class="projects">
         <div class="card stacked">
@@ -112,5 +137,6 @@
         </div>
       </main>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>

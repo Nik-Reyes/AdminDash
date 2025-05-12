@@ -97,3 +97,62 @@
   font-stretch: normal;
   unicode-range: U+0020-00C2;
 }
+
+@font-face {
+  font-family: "Cyberend";
+  src: url("Cyberend\ Regular.woff2") format("woff2"),
+    url("Cyberend\ Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00F7;
+}
+
+@font-face {
+  font-family: "Membra";
+  src: url("Membra.woff2") format("woff2"), url("Membra.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-02DC;
+}
+
+@font-face {
+  font-family: "Militech Outlined";
+  src: url("Militech\ Outlined.woff2") format("woff2"),
+    url("Militech Outlined.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-203A;
+}
+
+@font-face {
+  font-family: "Militech Outlined";
+  src: url("Militech\ Outlined.woff2") format("woff2"),
+    url("Militech Outlined.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-203A;
+}
+
+@font-face {
+  font-family: "Militech";
+  src: url("Militech.woff2") format("woff2"),
+    url("Militech.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-203A;
+}
+
+@font-face {
+  font-family: "Militech";
+  src: url("Militech.woff2") format("woff2"),
+    url("Militech.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  unicode-range: U+0020-203A;
+}
