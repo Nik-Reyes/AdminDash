@@ -4,6 +4,12 @@
   --cyber-yellow: rgb(249, 240, 29);
   --cyber-green: rgb(31, 173, 119);
   --main-bg: rgb(22, 3, 5);
+  --black-transparent: rgba(0, 0, 0, 0.5);
+  --black-transparent-light: rgba(0, 0, 0, 0.3);
+  --sidebar-button-bg: rgba(0, 217, 255, 0.2);
+  --hamburger-bg: rgba(228, 27, 50, 0.5);
+  --card-shadow: #2c0607;
+  --opt-bg: #310203;
   --button-delay: 100ms;
 }
 
@@ -42,7 +48,7 @@ aside {
   background-image: linear-gradient(
       to right,
       hsla(353, 79%, 50%, 0.15) 10%,
-      rgba(0, 0, 0, 0.3)
+      var(--black-transparent-light)
     ),
     url(./assets/svgs/stripes.svg);
   background-size: cover;
@@ -121,7 +127,7 @@ input[type="search"] {
   width: 100%;
   border-radius: 0.25rem;
   border: 1.5px solid var(--cyber-red);
-  background: rgba(0, 0, 0, 0.5);
+  background: var(--black-transparent);
   color: var(--cyber-blue);
   padding: 0.5em 0.5em 0.5em 2.25em;
   color: var(--cyber-blue);
@@ -156,7 +162,7 @@ label::before {
 .nav-button {
   color: var(--cyber-blue);
   border: 1.5px solid var(--cyber-blue);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--black-transparent-light);
 }
 
 .nav-button {
@@ -184,7 +190,7 @@ label::before {
 
 .nav-button:hover,
 .nav-button:focus {
-  background-color: rgba(0, 217, 255, 0.2);
+  background-color: var(--sidebar-button-bg);
   transform: translateX(10px);
 }
 
@@ -245,7 +251,7 @@ label::before {
 
 .helper:hover,
 .helper:focus {
-  background-color: rgba(0, 217, 255, 0.2);
+  background-color: var(--sidebar-button-bg);
 }
 
 .helper:last-child {
@@ -273,7 +279,7 @@ nav {
 
 .hamburger:hover,
 .hamburger:focus {
-  background-color: rgba(228, 27, 50, 0.5);
+  background-color: var(--hamburger-bg);
 }
 
 .hamburger:hover > .ham-line,
@@ -308,7 +314,7 @@ nav {
 
 .opt {
   border: none;
-  background-color: #310203;
+  background-color: var(--opt-bg);
   border: 1px solid var(--cyber-red);
   color: white;
   transition: box-shadow 250ms ease-in-out, text-shadow 250ms ease-in-out;
