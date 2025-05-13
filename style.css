@@ -222,6 +222,34 @@ label::before {
   gap: 5px;
 }
 
+.helper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2em;
+  transition: background-color 200ms ease-in-out;
+}
+
+.helper > span {
+  padding-left: 4px;
+}
+
+.helper > img {
+  flex-grow: 0;
+  width: 0px;
+  transition: width 200ms ease-in-out;
+}
+
+.helper:hover > img,
+.helper:focus > img {
+  width: 20px;
+}
+
+.helper:hover,
+.helper:focus {
+  background-color: rgba(0, 217, 255, 0.2);
+}
+
 .helper:last-child {
   grid-column: 1 / -1;
 }
@@ -262,32 +290,6 @@ nav {
   margin-left: 0.625rem;
 }
 
-.helper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.2em;
-  transition: background-color 200ms ease-in-out;
-}
-
-.helper > span {
-  padding-left: 4px;
-}
-
-.helper > img {
-  flex-grow: 0;
-  width: 0px;
-  transition: width 200ms ease-in-out;
-}
-
-.helper:hover > img {
-  width: 20px;
-}
-
-.helper:hover {
-  background-color: rgba(0, 217, 255, 0.2);
-}
-
 .spacer {
   height: 1px;
   background: var(--cyber-red);
@@ -297,7 +299,8 @@ nav {
   transition: box-shadow 250ms ease-in-out, text-shadow 250ms ease-in-out;
 }
 
-.opt:nth-child(-n + 4):hover {
+.opt:nth-child(-n + 4):hover,
+.opt:nth-child(-n + 4):focus {
   box-shadow: inset 0 0 7px var(--cyber-blue), 0 0 7px var(--cyber-blue);
   text-shadow: 0 0 5px var(--cyber-blue);
 }
@@ -346,13 +349,6 @@ main {
   transform: scale(1.03);
 }
 
-.card-description-outline {
-  transition-behavior: transform, background-color;
-  transition-timing-function: ease-in-out;
-  transition-duration: 225ms;
-  transform-origin: bottom;
-}
-
 .card-description {
   font-size: 1.25rem;
   transition: transform 225ms ease-in-out;
@@ -370,6 +366,7 @@ main {
   aspect-ratio: 1.25;
   object-fit: cover;
   border-radius: inherit;
+  padding-bottom: 5px;
 }
 
 .card-description-outline {
