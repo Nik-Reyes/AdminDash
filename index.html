@@ -45,13 +45,13 @@
           </div>
         </section>
         <div class="search">
-          <label for="search">Search</label>
-          <input
-            type="search"
-            name="searchBar"
-            id="search"
-            placeholder="search"
-          />
+          <label for="search" aria-label="search">
+            <input
+              type="search"
+              name="searchBar"
+              id="search"
+              placeholder="search"
+          /></label>
         </div>
         <div class="sidebar-button-wrapper">
           <button class="nav-button home">HOME</button
@@ -62,9 +62,31 @@
           ><button class="nav-button communities">COMMUNITIES</button>
         </div>
         <div class="help-button-wrapper">
-          <button class="helper">Settings</button
-          ><button class="helper">Support</button
-          ><button class="helper">Privacy</button>
+          <button class="helper">
+            <span>Settings</span>
+            <img
+              src="./assets/svgs/settings.svg"
+              alt=""
+              width="24"
+              height="24"
+            /></button
+          ><button class="helper">
+            <span>Support</span>
+            <img
+              src="./assets/svgs/support.svg"
+              alt=""
+              width="24"
+              height="24"
+            /></button
+          ><button class="helper">
+            <span>Privacy</span>
+            <img
+              src="./assets/svgs/privacy.svg"
+              alt=""
+              width="24"
+              height="24"
+            />
+          </button>
         </div>
       </aside>
       <nav class="nav">
