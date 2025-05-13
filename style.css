@@ -61,7 +61,6 @@ aside {
 .nav-button,
 input,
 .helper,
-.card-description-outline,
 .opt {
   line-height: 1;
   font-size: 1rem;
@@ -153,7 +152,6 @@ label::before {
   padding: 0.5rem 0 0;
 }
 
-.opt,
 .helper,
 .nav-button {
   color: var(--cyber-blue);
@@ -264,10 +262,23 @@ nav {
 }
 
 .hamburger {
-  width: 25px;
+  width: 30px;
   aspect-ratio: 1;
   display: grid;
   align-items: center;
+  transition: background-color 200ms ease-in-out;
+  border-radius: 10%;
+  padding: 5px;
+}
+
+.hamburger:hover,
+.hamburger:focus {
+  background-color: rgba(228, 27, 50, 0.5);
+}
+
+.hamburger:hover > .ham-line,
+.hamburger:focus > .ham-line {
+  background-color: var(--cyber-blue);
 }
 
 .close {
@@ -278,7 +289,7 @@ nav {
   height: 3px;
   background-color: var(--cyber-red);
   width: 100%;
-  transition: transform 200ms ease-in-out;
+  transition: background-color 200ms ease-in-out;
 }
 
 .spacer {
@@ -295,32 +306,25 @@ nav {
   background: var(--cyber-red);
 }
 
-.opt:nth-child(-n + 4) {
+.opt {
+  border: none;
+  background-color: #310203;
+  border: 1px solid var(--cyber-red);
+  color: white;
   transition: box-shadow 250ms ease-in-out, text-shadow 250ms ease-in-out;
-}
-
-.opt:nth-child(-n + 4):hover,
-.opt:nth-child(-n + 4):focus {
-  box-shadow: inset 0 0 7px var(--cyber-blue), 0 0 7px var(--cyber-blue);
-  text-shadow: 0 0 5px var(--cyber-blue);
+  border-radius: 0.25em;
 }
 
 .opt:last-child {
   display: none;
   margin-left: auto;
-  border: none;
-  background-color: rgba(100, 0, 0, 0.349);
-  color: white;
   font-family: "Cannet Agency Demo";
   font-size: clamp(0.5rem, 5vw, 0.75rem);
-  border-radius: 0.25em;
-  border: 1px solid var(--cyber-red);
   padding: 1.5em;
-  transition: box-shadow 250ms ease-in-out, text-shadow 250ms ease-in-out;
 }
 
-.opt:last-child:hover,
-.opt:last-child:focus {
+.opt:hover,
+.opt:focus {
   box-shadow: inset 0 0 10px var(--cyber-red), 0 0 10px var(--cyber-red);
   text-shadow: 0 0 5px white;
 }
@@ -340,7 +344,7 @@ main {
 
 .card {
   transition: transform 225ms ease-in-out;
-  box-shadow: 0 0 15px 4px rgba(75, 8, 8, 0.4);
+  box-shadow: 0 0 20px 4px #2c0607;
   border-radius: 0.625rem;
 }
 
@@ -349,82 +353,69 @@ main {
   transform: scale(1.03);
 }
 
-.card-description {
-  font-size: 1.25rem;
-  transition: transform 225ms ease-in-out;
-}
-
-.card:hover > :where(.card-description-outline, .card-img),
-.card:focus > :where(.card-description-outline, .card-img) {
-  background-color: var(--cyber-red);
-  border-color: var(--cyber-red);
-  color: var(--cyber-red);
-}
-
 .card-img {
-  width: 100%;
   aspect-ratio: 1.25;
   object-fit: cover;
   border-radius: inherit;
-  padding-bottom: 5px;
-}
-
-.card-description-outline {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  align-self: end;
-  height: 20%;
-  padding: 1em;
-  text-align: center;
-  background-color: rgb(36, 123, 90);
-  color: var(--cyber-green);
-  clip-path: polygon(
-    0% 0%,
-    3.057% 0%,
-    7.642% 22.222%,
-    12.227% 22.222%,
-    16.812% 0%,
-    83.188% 0%,
-    87.773% 22.222%,
-    92.358% 22.222%,
-    96.943% 0%,
-    100% 0%,
-    100% 100%,
-    0% 100%
-  );
-}
-
-.card-description-outline::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-color: #01160e;
-  clip-path: polygon(
-    0.437% 2.778%,
-    2.838% 2.778%,
-    7.424% 25%,
-    12.445% 25%,
-    17.031% 2.778%,
-    82.969% 2.778%,
-    87.555% 25%,
-    92.576% 25%,
-    97.162% 2.778%,
-    99.563% 2.778%,
-    99.563% 97.222%,
-    0.437% 97.222%
-  );
+  padding-bottom: 1px;
 }
 
 .stacked {
   display: grid;
+  justify-items: center;
 }
 
 .stacked > * {
   grid-row: 1/2;
   grid-column: 1/2;
+}
+
+.svg-bar,
+.card-title {
+  align-self: end;
+  width: 100%;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  height: 18.5%;
+  font-family: "Cannet Agency Demo";
+  padding-left: 0.5rem;
+  font-size: clamp(0.48rem, 1em, 0.65rem);
+  letter-spacing: 0.075em;
+  line-height: 1;
+  font-size: 0.53rem;
+}
+
+@media screen and (min-width: 24.5rem) {
+  .card-title {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  .card-title {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 41.875rem) {
+  .card-title {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 50.625rem) {
+  .card-title {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 56.9375rem) {
+  .card-title {
+    font-size: 0.5rem;
+  }
 }
 
 @media (min-width: 41.875rem) {
@@ -460,7 +451,7 @@ main {
 
 @media (max-width: 41.875rem) {
   .close :first-child {
-    transform: translateY(8px) rotate(45deg);
+    transform: translateY(6.5px) rotate(45deg);
   }
 
   .close :nth-child(2) {
@@ -468,7 +459,7 @@ main {
   }
 
   .close :last-child {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-6.5px) rotate(-45deg);
   }
 
   aside.side-panel {
