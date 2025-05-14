@@ -1,9 +1,7 @@
-const hamburgerOpen = document.querySelector("nav .hamburger");
-const sidebar = document.querySelector(".side-panel");
 const wrapper = document.querySelector(".wrapper");
-const hamburgerClose = document.querySelector(".side-panel .hamburger");
-
-console.log(wrapper);
+const sidebar = document.querySelector(".side-panel");
+const hamburgerOpen = document.querySelector(".open-sidepanel");
+const hamburgerClose = document.querySelector(".close-sidepanel");
 
 hamburgerOpen.addEventListener("click", () => {
   hamburgerOpen.setAttribute("aria-expanded", "true");
