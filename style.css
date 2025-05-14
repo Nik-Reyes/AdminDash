@@ -6,7 +6,7 @@
   --main-bg: rgb(22, 3, 5);
   --black-transparent: rgba(0, 0, 0, 0.5);
   --black-transparent-light: rgba(0, 0, 0, 0.3);
-  --sidebar-button-bg: rgba(0, 217, 255, 0.2);
+  --sidepanel-button-bg: rgba(0, 217, 255, 0.2);
   --hamburger-bg: rgba(228, 27, 50, 0.5);
   --card-shadow: #2c0607;
   --opt-bg: #310203;
@@ -39,7 +39,7 @@ img {
   height: auto;
 }
 
-h1 {
+.profile-name {
   font-family: "Saira Condensed";
   font-size: 1.5rem;
   color: white;
@@ -154,7 +154,7 @@ label::before {
   aspect-ratio: 1;
 }
 
-.sidebar-button-wrapper {
+.sidepanel-button-wrapper {
   display: grid;
   position: relative;
   gap: 1rem;
@@ -193,7 +193,7 @@ label::before {
 
 .nav-button:hover,
 .nav-button:focus {
-  background-color: var(--sidebar-button-bg);
+  background-color: var(--sidepanel-button-bg);
   transform: translateX(10px);
 }
 
@@ -256,7 +256,7 @@ label::before {
 
 .helper:hover,
 .helper:focus {
-  background-color: var(--sidebar-button-bg);
+  background-color: var(--sidepanel-button-bg);
 }
 
 .helper:last-child {
